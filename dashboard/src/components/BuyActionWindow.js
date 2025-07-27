@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import axios from "axios";
-
 import GeneralContext from "./GeneralContext";
 
 import "./BuyActionWindow.css";
@@ -36,7 +34,11 @@ const BuyActionWindow = ({ uid }) => {
               type="number"
               name="qty"
               id="qty"
-              onChange={(e) => setStockQuantity(e.target.value)}
+              min="1"
+              onChange={(e) => {
+                const value = Math.max(1, parseInt(e.target.value));
+                setStockQuantity(value);
+              }}
               value={stockQuantity}
             />
           </fieldset>
@@ -46,8 +48,12 @@ const BuyActionWindow = ({ uid }) => {
               type="number"
               name="price"
               id="price"
+              min="0"
               step="0.05"
-              onChange={(e) => setStockPrice(e.target.value)}
+              onChange={(e) => {
+                const value = Math.max(0, parseFloat(e.target.value));
+                setStockPrice(value);
+              }}
               value={stockPrice}
             />
           </fieldset>

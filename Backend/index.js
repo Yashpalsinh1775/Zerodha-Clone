@@ -29,17 +29,45 @@ app.get("/allPositions", async (req, res) => {
 });
 
 app.post("/newOrder", async (req, res) => {
-  let newOrder = new OrdersModel({
-    name: req.body.name,
-    qty: req.body.qty,
-    price: req.body.price,
-    mode: req.body.mode,
+  const { name, qty, price, mode } = req.body;
+
+  const newOrder = new OrdersModel({
+    name,
+    qty,
+    price,
+    mode,
   });
 
-  newOrder.save();
+  await newOrder.save();
 
-  res.send("Order saved!");
+  if (mode === "BUY") {
+    let holding = await HoldingsModel.findOne({ name });
+
+    if (holding) {
+      // Update existing holding
+      const totalQty = holding.qty + qty;
+      const totalCost = holding.qty * holding.price + qty * price;
+      const avgPrice = totalCost / totalQty;
+
+      holding.qty = totalQty;
+      holding.price = avgPrice;
+
+      await holding.save();
+    } else {
+      // Create new holding
+      const newHolding = new HoldingsModel({
+        name,
+        qty,
+        price,
+      });
+
+      await newHolding.save();
+    }
+  }
+
+  res.send("Order placed and holding updated.");
 });
+
 
 app.listen(PORT, () => {
   console.log("App started!");

@@ -18,7 +18,7 @@ root.render(
   <BrowserRouter>
     <Navbar />
       <Routes>
-        <Route path='/https://zerodha-clone-sytp.onrender.com/' element={<HomePage />} />
+        <Route path='/' element={<HomePage />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/product' element={<ProductPage />} />

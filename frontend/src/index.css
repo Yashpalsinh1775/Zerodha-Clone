@@ -60,3 +60,34 @@ code {
     display: block;
   }
 }
+
+#supportWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+
+@media (max-width: 768px) {
+  #supportWrapper {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  #supportHero input {
+    width: 100%;
+    padding: 15px 20px;
+  }
+
+  #supportHero a {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+}
+
+.container {
+  padding: 10px;
+  flex-direction: column;
+}
+
+

@@ -842,113 +842,53 @@ hr {
   background-color: rgb(212, 212, 212);
 }
 
-/* Tablet and below */
-@media (max-width: 1024px) {
-  .row {
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .nav-link {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  #supportWrapper {
     flex-direction: column;
-    align-items: flex-start;
+    margin: 0 20px;
+    gap: 20px;
   }
 
-  .col {
-    flex-basis: 100%;
-    margin-bottom: 20px;
-  }
-
-  .data {
+  #supportHero input {
     width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 15px 20px;
+    font-size: 14px;
   }
 
-  .menu-container,
-  .indices-container,
-  .watchlist-container {
-    flex-basis: 100%;
-    padding: 10px;
-  }
-}
-
-/* Mobile phones */
-@media (max-width: 768px) {
-  .dashboard-container {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .content {
-    padding: 5%;
-  }
-
-  .topbar-container {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .profile {
-    margin-left: 0;
-    justify-content: flex-start;
-  }
-
-  .menus {
-    flex-direction: column;
-  }
-
-  .menus li {
-    margin-bottom: 10px;
-  }
-
-  .watchlist-number {
-    flex-direction: column;
-    height: auto;
-    padding: 10px;
-    width: 100%;
-    position: relative;
-  }
-
-  .watchlist-number ul li {
+  #supportHero a {
+    font-size: 16px;
+    margin-right: 0;
     display: block;
-    border-right: none;
-    border-bottom: 1px solid #ccc;
+    margin-top: 10px;
   }
+}
 
-  .table .data {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .order-table th,
-  .order-table td {
-    font-size: 0.7rem;
-    padding: 8px;
-  }
-
-  .search {
-    padding: 10px;
-  }
-
-  .data .second p span {
+/* Extra small devices (phones < 480px) */
+@media (max-width: 480px) {
+  .nav-link {
     display: block;
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .watchlist-container,
-  .orders,
-  .dashboard-container {
-    height: auto;
-    overflow: visible;
-  }
-}
-
-@media (max-width: 768px) {
-  .menu,
-  .nav-link,
-  .profile .username {
-    font-size: 0.75rem;
+    margin: 10px 0;
+    text-align: center;
   }
 
-  .imp {
-    font-size: 1.2rem;
+  #supportHero {
+    padding: 20px;
+    text-align: center;
+  }
+
+  #supportHero input {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  #supportHero a {
+    font-size: 14px;
   }
 }

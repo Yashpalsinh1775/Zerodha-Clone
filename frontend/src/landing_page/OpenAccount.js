@@ -9,12 +9,15 @@ function OpenAccount() {
           Modern platform and apps, ₹0 investments, and flat ₹20 intraday and
           F&O trades.
         </p>
-        <button
-          className="p-2 btn btn-primary fs-5"
-          style={{ width: "20%", margin: "0 auto" }}
-        >
-          Sign up Now
-        </button>
+        <a 
+          href='https://zerodha-clone-dashboard-psk3.onrender.com'
+          target='_blank'  
+          rel='noopener noreferrer' 
+          className='p-2 btn btn-primary fs-5'
+          style={{ width: "20%", margin: "0 auto", display: "inline-block" }}
+          >
+            SignUp Npw!
+          </a>
       </div>
     </div>
   );

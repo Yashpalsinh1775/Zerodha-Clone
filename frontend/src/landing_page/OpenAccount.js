@@ -10,13 +10,13 @@ function OpenAccount() {
           F&O trades.
         </p>
         <a 
-          href='https://zerodha-clone-dashboard-psk3.onrender.com'
+          href='https://kite.zerodha.com/'
           target='_blank'  
           rel='noopener noreferrer' 
           className='p-2 btn btn-primary fs-5'
           style={{ width: "20%", margin: "0 auto", display: "inline-block" }}
           >
-            SignUp Npw!
+            SignUp Now!
           </a>
       </div>
     </div>
